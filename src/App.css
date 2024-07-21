@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font-family: 'Nyala', sans-serif;
+  background-color: #fffafa; /* Snow background */
+}
+h1 {
+  color: #006400; /* Green */
+}
+label {
+  color: #0000ff; /* Blue */
+}
+input[type="text"], textarea, select {
+  border: 1px solid #ffd700; /* Golden */
+  border-radius: 5px;
+  padding: 5px;
+}
+button {
+  background-color: #006400; /* Green */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #004d00; /* Darker Green */
+}
+input[type="text"], textarea, select {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './RegistrationPage.css';
-import { Link } from 'react-router-dom';
-
+import Header from './Header';
 const RegistrationPage = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -38,21 +37,7 @@ const RegistrationPage = () => {
 
     return (
         <div className="registration-page">
-             <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/jobposting">Job Posting</Link>
-          </li>
-          <li>
-            <Link to="/RegistrationPage">Registration</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+             <Header/>
             <h1>Register for Peep Bus Ticketing</h1>
             <form onSubmit={handleSubmit}>
                 <label>

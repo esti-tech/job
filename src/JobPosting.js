@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './JobPosting.css';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 const JobPostingPage = () => {
     const [job, setJob] = useState({
@@ -37,21 +38,7 @@ const JobPostingPage = () => {
 
     return (
         <div className="job-posting-page">
-            <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/jobposting">Job Posting</Link>
-          </li>
-          <li>
-            <Link to="/RegistrationPage">Registration</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+            <Header/>
             <h1>Post a Job Vacancy</h1>
             <form onSubmit={handleSubmit}>
                 <label>

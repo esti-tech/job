@@ -3,8 +3,7 @@ import axios from 'axios';
 import './Dashboard.css';
 import JobPostingTable from './JobPostingTable';
 import UserTable from './UserTable';
-import { Link } from 'react-router-dom';
-
+import Header from './Header';
 const Dashboard = () => {
     const [jobs, setJobs] = useState([]);
     const [users, setUsers] = useState([]);
@@ -22,21 +21,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-              <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/jobposting">Job Posting</Link>
-          </li>
-          <li>
-            <Link to="/RegistrationPage">Registration</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+             <Header />
             <h1>Dashboard</h1>
             <div className="dashboard-section">
                 <h2>Job Postings</h2>

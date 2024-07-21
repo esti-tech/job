@@ -15,6 +15,15 @@ const Header = () => {
           <li>
             <Link to="/RegistrationPage">Registration</Link>
           </li>
+          <li>
+            <Link to="/FormBuilder">Form Builder</Link>
+          </li>
+          <li>
+            <Link to="/CustomBranding">Custom Branding</Link>
+          </li>
+          <li>
+            <Link to="/ThemeDesigner">Theme Designer</Link>
+          </li>
         </ul>
       </nav>
     </header>
