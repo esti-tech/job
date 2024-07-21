@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './JobPosting.css';
+import { Link } from 'react-router-dom';
 
 const JobPostingPage = () => {
     const [job, setJob] = useState({
@@ -25,7 +26,7 @@ const JobPostingPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/jobs', job)
+        axios.post('http://localhost:5000/api/register/job', job)
             .then(response => {
                 console.log('Job posted successfully:', response.data);
             })
@@ -36,6 +37,21 @@ const JobPostingPage = () => {
 
     return (
         <div className="job-posting-page">
+            <header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/jobposting">Job Posting</Link>
+          </li>
+          <li>
+            <Link to="/RegistrationPage">Registration</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
             <h1>Post a Job Vacancy</h1>
             <form onSubmit={handleSubmit}>
                 <label>

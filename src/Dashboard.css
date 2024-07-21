@@ -1,0 +1,38 @@
+.dashboard {
+    padding: 20px;
+    font-family: 'Nyala', serif;
+    background-color: #fffafa; /* Snow */
+}
+
+h1 {
+    color: #006400; /* Dark green */
+}
+
+.dashboard-section {
+    margin-bottom: 40px;
+}
+
+.dashboard-section h2 {
+    color: #006400; /* Dark green */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #4682b4; /* Steel blue */
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './RegistrationPage.css';
+import { Link } from 'react-router-dom';
 
 const RegistrationPage = () => {
     const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const RegistrationPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const password = generatePassword();
-        axios.post('/api/register', { ...formData, password })
+        axios.post('http://localhost:5000/api/register/user', { ...formData, password })
             .then(response => {
                 console.log('User registered successfully:', response.data);
             })
@@ -37,6 +38,21 @@ const RegistrationPage = () => {
 
     return (
         <div className="registration-page">
+             <header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/jobposting">Job Posting</Link>
+          </li>
+          <li>
+            <Link to="/RegistrationPage">Registration</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
             <h1>Register for Peep Bus Ticketing</h1>
             <form onSubmit={handleSubmit}>
                 <label>
