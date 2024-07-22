@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './JobPosting.css';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 
 const JobPostingPage = () => {
@@ -30,6 +29,8 @@ const JobPostingPage = () => {
         axios.post('http://localhost:5000/api/register/job', job)
             .then(response => {
                 console.log('Job posted successfully:', response.data);
+                alert("Job posted successfully! Redirecting to home page...");
+                window.location.href = "/";
             })
             .catch(error => {
                 console.error('There was an error posting the job!', error);

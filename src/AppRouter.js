@@ -3,19 +3,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RegistrationPage from './RegistrationUser';
 import JobPostingPage from './JobPosting';
 import Dashboard from './Dashboard';
-import FormBuilder from './components/FormBuilder';
-import CustomBranding from './components/CustomBranding';
-import ThemeDesigner from './components/ThemeDesigner';
+import Jobs from './Jobs';
+// import FormBuilder from './components/FormBuilder';
+// import CustomBranding from './components/CustomBranding';
+// import ThemeDesigner from './components/ThemeDesigner';
+import Login from './Login';
+import PrivateRoute from './PrivateRoute';
 function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/jobposting" element={<JobPostingPage />} />
-        <Route path="/RegistrationPage" element={<RegistrationPage />} />
-        <Route path="/FormBuilder" element={<FormBuilder />} />
+      <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>} />
+        <Route path="/jobposting" element={<PrivateRoute><JobPostingPage /></PrivateRoute>} />
+        <Route path="/RegistrationPage/:id" element={<RegistrationPage />} />
+        {/* <Route path="/FormBuilder" element={<FormBuilder />} />
         <Route path="/CustomBranding" element={<CustomBranding />} />
-        <Route path="/ThemeDesigner" element={<ThemeDesigner />} />
+        <Route path="/ThemeDesigner" element={<ThemeDesigner />} /> */}
+       <Route path="/login" element={<Login />} />
+       <Route path="/" element={<Jobs />} />
       </Routes>
     </Router>
   );

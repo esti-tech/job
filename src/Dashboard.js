@@ -4,7 +4,7 @@ import './Dashboard.css';
 import JobPostingTable from './JobPostingTable';
 import UserTable from './UserTable';
 import Header from './Header';
-const Dashboard = () => {
+const Dashboard =  () => {
     const [jobs, setJobs] = useState([]);
     const [users, setUsers] = useState([]);
 
@@ -27,9 +27,9 @@ const Dashboard = () => {
                 <h2>Job Postings</h2>
                 <JobPostingTable jobs={jobs} />
             </div>
-            <div className="dashboard-section">
-                <h2>User Registrations</h2>
-                <UserTable users={users} />
+            <div className="dashboard-section"> 
+                <h2>Applicants</h2>
+                <UserTable users={users} jobs={jobs} />
             </div>
         </div>
     );

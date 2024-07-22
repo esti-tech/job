@@ -1,6 +1,6 @@
 import React from 'react';
 // import './JobPostingTable.css';
-
+import { Link } from 'react-router-dom';
 const JobPostingTable = ({ jobs }) => {
     return (
         <table className="job-posting-table">
@@ -11,7 +11,9 @@ const JobPostingTable = ({ jobs }) => {
                     <th>Department</th>
                     <th>Reports To</th>
                     <th>Application Deadline</th>
-                    <th>Salary</th>
+                    {/* <th>Salary</th> */}
+                    <th>Action</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +24,8 @@ const JobPostingTable = ({ jobs }) => {
                         <td>{job.department}</td>
                         <td>{job.reportsTo}</td>
                         <td>{new Date(job.applicationDeadline).toLocaleDateString()}</td>
-                        <td>{job.salary}</td>
+                        {/* <td>{job.salary}</td> */}
+                        <td><Link to={`/RegistrationPage/${job.id}`}><button>Apply</button></Link></td>
                     </tr>
                 ))}
             </tbody>
