@@ -9,18 +9,19 @@ import Jobs from './Jobs';
 // import ThemeDesigner from './components/ThemeDesigner';
 import Login from './Login';
 import PrivateRoute from './PrivateRoute';
-function AppRouter() {
+function AppRouter ()
+{
   return (
     <Router>
       <Routes>
-      <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>} />
-        <Route path="/jobposting" element={<PrivateRoute><JobPostingPage /></PrivateRoute>} />
-        <Route path="/RegistrationPage/:id" element={<RegistrationPage />} />
+        <Route path="/" element={ <Dashboard /> } />
+        <Route path="/jobposting" element={ <PrivateRoute><JobPostingPage /></PrivateRoute> } />
+        <Route path="/RegistrationPage/:id" element={ <RegistrationPage /> } />
         {/* <Route path="/FormBuilder" element={<FormBuilder />} />
         <Route path="/CustomBranding" element={<CustomBranding />} />
         <Route path="/ThemeDesigner" element={<ThemeDesigner />} /> */}
-       <Route path="/login" element={<Login />} />
-       <Route path="/" element={<Jobs />} />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/jobs" element={ <Jobs /> } />
       </Routes>
     </Router>
   );

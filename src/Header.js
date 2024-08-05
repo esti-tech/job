@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link ,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Header.css';
-const Header = () => {
+const Header = () =>
+{
   const navigate = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem('token'); // Remove token from localStorage
-    navigate('/'); // Redirect to login page
+  const handleLogout = () =>
+  {
+    localStorage.removeItem( 'token' ); // Remove token from localStorage
+    navigate( '/' ); // Redirect to login page
   };
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
+    <header className={ styles.header }>
+      <nav className={ styles.nav }>
         <ul>
           <li>
             <Link to="/">Dashboard</Link>
@@ -30,7 +32,7 @@ const Header = () => {
             <Link to="/ThemeDesigner">Theme Designer</Link>
           </li> */}
           <li>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={ handleLogout }>Logout</button>
           </li>
         </ul>
       </nav>
